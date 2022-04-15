@@ -2,12 +2,11 @@ import React from 'react'
 import { capitalizeFirstLetter } from '../../utils/helpers'
 import PhotoList from '../PhotoList'
 
-export default function Gallery({currentCategory}) {
-  const {name, description} = currentCategory
+export default function Gallery({ currentCategory }) {
   return (
     <section>
-      <h1>{capitalizeFirstLetter(name)}</h1>
-      <p>{description}</p>
+      <h1 data-testid="h1tag">{capitalizeFirstLetter(currentCategory.name)}</h1>
+      <p>{currentCategory.description}</p>
       <PhotoList category={currentCategory.name} />
     </section>
   )
